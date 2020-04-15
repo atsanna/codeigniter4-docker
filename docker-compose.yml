@@ -1,0 +1,54 @@
+version: "3"
+
+services:
+#--------------------------------------------------------------------------#
+#--------------------------------------------------------------------------#
+#                     C O D E I G N I T E R  v4.0.2                        #
+#--------------------------------------------------------------------------#
+#--------------------------------------------------------------------------#
+    codeigniter4:
+        image: atsanna/codeigniter4:latest
+        container_name: 'codeigniter4'
+        ports:
+          - 80:80
+        links:
+          - codeigniter4_mysql
+        volumes:
+          - ./localfolder/www:/var/www/html
+
+#--------------------------------------------------------------------------#
+#--------------------------------------------------------------------------#
+#                               M Y S Q L                                  #
+#--------------------------------------------------------------------------#
+#--------------------------------------------------------------------------#               
+    codeigniter4_mysql:
+        image: mysql:8.0.19
+        container_name: 'codeigniter4_mysql'
+        ports:
+          - 3306:3306
+        volumes:
+          - ./localfolder/mysql:/var/lib/mysql
+          - ./localfolder/logs/mysql:/var/log/mysql
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpassword
+          MYSQL_DATABASE: codeigniter4
+          MYSQL_USER: codeigniter4
+          MYSQL_PASSWORD: codeigniter4
+
+#--------------------------------------------------------------------------#
+#--------------------------------------------------------------------------#
+#                         P H P M Y A D M I N                              #
+#--------------------------------------------------------------------------#
+#--------------------------------------------------------------------------#             
+    codeigniter4_phpmyadmin:
+        image: phpmyadmin/phpmyadmin:5.0.2
+        container_name: 'codeigniter4_phpmyadmin'
+        links:
+          - codeigniter4_mysql
+        environment:
+          PMA_HOST: codeigniter4_mysql
+          PMA_PORT: 3306
+        ports:
+          - 81:80
+        volumes:
+          - ./localfolder/sessions:/sessions
