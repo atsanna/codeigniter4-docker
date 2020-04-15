@@ -1,5 +1,7 @@
 FROM php:7.2.26-apache
 
+MAINTAINER Antonio Sanna <atsanna@tiscali.it>
+
 RUN apt-get update
 RUN apt-get upgrade -y
 
