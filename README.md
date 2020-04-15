@@ -2,7 +2,6 @@
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/atsanna/codeigniter4?style=for-the-badge)](https://hub.docker.com/r/atsanna/codeigniter4/)
 [![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/atsanna/codeigniter4/v4.0.2?style=for-the-badge)](https://hub.docker.com/r/atsanna/codeigniter4/)
 ![Docker Pulls](https://img.shields.io/docker/pulls/atsanna/codeigniter4?style=for-the-badge)
-![GitHub All Releases](https://img.shields.io/github/downloads/atsanna/codeigniter4-docker/total?style=for-the-badge)
 
 This repository provides you a development environment without requiring you to install PHP, a web server, and any other server software on your local machine. For this, it requires Docker and Docker Compose.
 
