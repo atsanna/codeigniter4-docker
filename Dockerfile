@@ -1,4 +1,4 @@
-FROM php:7.2.26-apache
+FROM php:7.2.30-apache
 
 MAINTAINER Antonio Sanna <atsanna@tiscali.it>
 
@@ -20,6 +20,8 @@ RUN composer self-update
 
 ADD conf/apache.conf /etc/apache2/sites-available/000-default.conf
 
+RUN a2enmod rewrite
+
 ADD startScript.sh /startScript.sh
 RUN chmod +x /startScript.sh
 
@@ -28,7 +30,7 @@ RUN cd /var/www/html
 RUN composer create-project codeigniter4/appstarter codeigniter4 v4.0.3
 RUN chmod -R 0777 /var/www/html/codeigniter4/writable
 
-RUN mv /var/www/html/codeigniter4 /var/tmp/ 
+RUN mv codeigniter4 /
 
 RUN apt-get clean \
     && rm -r /var/lib/apt/lists/*
@@ -37,4 +39,3 @@ EXPOSE 80
 VOLUME ["/var/www/html", "/var/log/apache2", "/etc/apache2"]
 
 CMD ["bash", "/startScript.sh"]
-
