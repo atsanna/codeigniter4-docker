@@ -1,6 +1,6 @@
-FROM php:7.2.30-apache
+FROM php:7.3-apache
 
-MAINTAINER Antonio Sanna <atsanna@tiscali.it>
+LABEL maintainer="Antonio Sanna <atsanna@tiscali.it>"
 
 RUN apt-get update
 RUN apt-get upgrade -y
