@@ -22,7 +22,11 @@ ADD conf/apache.conf /etc/apache2/sites-available/000-default.conf
 
 RUN a2enmod rewrite
 
-ADD startScript.sh /startScript.sh
+# The printf command below creates the script /startScript.sh with the following 3 lines. 
+# #!/bin/bash
+# mv /codeigniter4 /var/www/html
+# /usr/sbin/apache2ctl -D FOREGROUND
+RUN printf "#!/bin/bash\nmv /codeigniter4 /var/www/html\n/usr/sbin/apache2ctl -D FOREGROUND" > /startScript.sh
 RUN chmod +x /startScript.sh
 
 RUN cd /var/www/html
