@@ -26,12 +26,12 @@ cd codeigniter
 
 build the image:<br>
 ```
-docker build . -t codeginiter:4.0.3
+docker build . -t codeginiter:4.0.4
 ```
 
 start the container:
 ```
-docker container run --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeginiter:4.0.3
+docker container run --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeginiter:4.0.4
 ```
 
 ## Installation
