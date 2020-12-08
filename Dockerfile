@@ -17,10 +17,8 @@ RUN docker-php-ext-enable pdo_mysql
 RUN apt-get -y install --fix-missing zip unzip
 
 # Composer
-RUN curl -sS https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin/composer
-RUN chmod +x /usr/local/bin/composer
 RUN composer self-update
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 ADD conf/apache.conf /etc/apache2/sites-available/000-default.conf
 
