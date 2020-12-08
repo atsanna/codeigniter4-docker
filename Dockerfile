@@ -15,10 +15,11 @@ RUN docker-php-ext-enable mysqli
 RUN docker-php-ext-enable pdo
 RUN docker-php-ext-enable pdo_mysql
 RUN apt-get -y install --fix-missing zip unzip
+RUN apt-get -y install --fix-missing git
 
 # Composer
-RUN composer self-update
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN composer self-update --2
 
 ADD conf/apache.conf /etc/apache2/sites-available/000-default.conf
 
