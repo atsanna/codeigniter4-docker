@@ -17,6 +17,13 @@ RUN docker-php-ext-enable pdo_mysql
 RUN apt-get -y install --fix-missing zip unzip
 RUN apt-get -y install --fix-missing git
 
+# xdebug
+RUN pecl install xdebug
+RUN echo "zend_extension=$(find / -name xdebug.so)" > /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo 'xdebug.client_port=9000' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo 'xdebug.mode=debug' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo 'xdebug.client_host=host.docker.internal' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
 # Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer self-update --2
