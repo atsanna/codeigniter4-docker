@@ -9,6 +9,8 @@ services:
     codeigniter4:
         image: atsanna/codeigniter4:latest
         container_name: 'codeigniter4'
+        build:
+          context: .
         ports:
           - 80:80
         links:
