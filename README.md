@@ -31,7 +31,7 @@ docker build . -t codeigniter:4.1.4
 
 start the container:
 ```
-docker container run --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeigniter:4.1.4
+docker container run -it --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeigniter:4.1.4
 ```
 
 ## Installation
