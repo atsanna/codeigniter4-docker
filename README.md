@@ -5,7 +5,7 @@
 
 This repository provides you a development environment without requiring you to install PHP, a web server, and any other server software on your local machine. For this, it requires Docker and Docker Compose.
 
-Basic example to create your container (tested on Ubuntu 18.04 - Docker version 19.03.5, build 633a0ea838):
+Basic example to create your container (tested on Ubuntu 20.04 - Docker version 20.10.11, build dea9396 - docker-compose version 1.25.0 ):
 
 **NOTE: This package is under early development and is not ready for prime-time.**
 
@@ -34,13 +34,25 @@ start the container:
 docker container run -it --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeigniter:4.1.5
 ```
 
+## Build image with PHP 7.4
+```
+docker build -f Dockerfile-php7.4 -t codeigniter:4.1.5 .
+```
+
+## Build image with PHP 8.0
+```
+docker build -f Dockerfile-php8.0 -t codeigniter:4.1.5 .
+```
+
 ## Installation
 
 1. Install [docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/) ;
 
 2. Copy `docker-compose.yml` file to your project root path, and edit it according to your needs ;
 
-3. From your project directory, start up your application by running:
+3. Uncomment, in the `docker-compose.yml` file, the image you want to use it ;
+
+4. From your project directory, start up your application by running:
 
 ```sh
 docker-compose up -d
