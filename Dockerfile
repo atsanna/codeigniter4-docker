@@ -9,6 +9,7 @@ RUN apt-get install --fix-missing -y libpq-dev
 RUN apt-get install --no-install-recommends -y libpq-dev
 RUN apt-get install -y libxml2-dev libbz2-dev zlib1g-dev
 RUN apt-get -y install libsqlite3-dev libsqlite3-0 mariadb-client curl exif ftp
+RUN docker-php-ext-install calendar
 RUN docker-php-ext-install intl
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 RUN docker-php-ext-enable mysqli
@@ -44,7 +45,7 @@ RUN chmod +x /startScript.sh
 
 RUN cd /var/www/html
 
-RUN composer create-project codeigniter4/appstarter codeigniter4 v4.1.8
+RUN composer create-project codeigniter4/appstarter codeigniter4 v4.1.9
 RUN chmod -R 0777 /var/www/html/codeigniter4/writable
 
 RUN mv codeigniter4 /
