@@ -45,7 +45,7 @@ RUN chmod +x /startScript.sh
 
 RUN cd /var/www/html
 
-RUN composer create-project codeigniter4/appstarter codeigniter4 v4.1.9
+RUN composer create-project codeigniter4/appstarter codeigniter4 v4.2.0
 RUN chmod -R 0777 /var/www/html/codeigniter4/writable
 
 RUN mv codeigniter4 /

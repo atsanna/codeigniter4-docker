@@ -3,13 +3,13 @@ version: "3"
 services:
 #--------------------------------------------------------------------------#
 #--------------------------------------------------------------------------#
-#                     C O D E I G N I T E R  v4.1.9                        #
+#                     C O D E I G N I T E R  v4.2.0                        #
 #--------------------------------------------------------------------------#
 #--------------------------------------------------------------------------#
     codeigniter4:
         image: atsanna/codeigniter4:latest
-#        image: atsanna/codeigniter4:v4.1.9-php7.4
-#        image: atsanna/codeigniter4:v4.1.9-php8.0
+#        image: atsanna/codeigniter4:v4.2.0-php7.4
+#        image: atsanna/codeigniter4:v4.2.0-php8.0
         container_name: 'codeigniter4'
         ports:
           - 80:80
