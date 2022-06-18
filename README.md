@@ -339,7 +339,7 @@ docker-compose down --volumes
 
 ## Changelog
 
-You can find the changes made in the [changelog.md](CHANGELOG) file 
+You can find the changes made in the [changelog](CHANGELOG.md) file 
 
 ## Contributing
 
