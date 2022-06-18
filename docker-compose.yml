@@ -3,14 +3,37 @@ version: "3"
 services:
 #--------------------------------------------------------------------------#
 #--------------------------------------------------------------------------#
-#                     C O D E I G N I T E R  v4.2.0                        #
+#                     C O D E I G N I T E R  v4.2.1                        #
 #--------------------------------------------------------------------------#
 #--------------------------------------------------------------------------#
     codeigniter4:
         image: atsanna/codeigniter4:latest
-#        image: atsanna/codeigniter4:v4.2.0-php7.4
-#        image: atsanna/codeigniter4:v4.2.0-php8.0
+#        image: atsanna/codeigniter4:v4.2.1-php8.1-apache
+#        image: atsanna/codeigniter4:v4.2.1-php8.1.7-apache
+#        image: atsanna/codeigniter4:v4.2.1-php8.0-apache
+#        image: atsanna/codeigniter4:v4.2.1-php8.0.20-apache
+#        image: atsanna/codeigniter4:v4.2.1-php7.4-apache
+#        image: atsanna/codeigniter4:v4.2.1-php7.4.30-apache
         container_name: 'codeigniter4'
+        environment:
+          - REGEN_ENV_FILE=1
+
+          - CI_ENVIRONMENT=development
+          - APP_BASE_URL=https://${PROJECT_BASE_URL}/
+          - DB_DEFAULT_HOSTNAME=${MYSQL_HOSTNAME}
+          - DB_DEFAULT_DATABASE=${MYSQL_DATABASE}
+          - DB_DEFAULT_USERNAME=${MYSQL_USER}
+          - DB_DEFAULT_PASSWORD=${MYSQL_PASSWORD}
+          - DB_DEFAULT_DRIVER=MySQLi
+          - DB_DEFAULT_PORT=3306
+
+          - ROOT_EMAIL=${EMAIL_ROOT}
+          - MAIL_SERVER=${MAIL_SERVER}
+          - MAIL_SERVER_PORT=${MAIL_SERVER_PORT}
+          - MAIL_SERVER_USER=${MAIL_SERVER_USER}
+          - MAIL_SERVER_PASSWORD=${MAIL_SERVER_PASSWORD}
+          - MAIL_SERVER_TLS=${MAIL_SERVER_TLS}
+          - MAIL_SERVER_STARTTLS=${MAIL_SERVER_STARTTLS}
         ports:
           - 80:80
         links:
@@ -32,10 +55,10 @@ services:
           - ./localfolder/mysql:/var/lib/mysql
           - ./localfolder/logs/mysql:/var/log/mysql
         environment:
-          MYSQL_ROOT_PASSWORD: rootpassword
-          MYSQL_DATABASE: codeigniter4
-          MYSQL_USER: codeigniter4
-          MYSQL_PASSWORD: codeigniter4
+          MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+          MYSQL_DATABASE: ${MYSQL_DATABASE}
+          MYSQL_USER: ${MYSQL_USER}
+          MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
 #--------------------------------------------------------------------------#
 #--------------------------------------------------------------------------#

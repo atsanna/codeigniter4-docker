@@ -1,0 +1,15 @@
+PROJECT_BASE_URL=localhost
+
+MYSQL_HOSTNAME=codeigniter4_mysql
+MYSQL_DATABASE=codeigniter4
+MYSQL_USER=codeigniter4
+MYSQL_PASSWORD=codeigniter4
+MYSQL_ROOT_PASSWORD=rootpassword
+
+EMAIL_ROOT=postmaster@localhost
+MAIL_SERVER=mail.localhost
+MAIL_SERVER_PORT=465
+MAIL_SERVER_USER=username@localhost
+MAIL_SERVER_PASSWORD=password
+MAIL_SERVER_TLS=YES
+MAIL_SERVER_STARTTLS=YES
