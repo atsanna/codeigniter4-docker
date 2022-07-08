@@ -123,7 +123,7 @@ docker-compose down --volumes
 - `COOKIE_PATH` - Typically will be a forward slash [`/`]
 - `COOKIE_DOMAIN` - Set to `.your-domain.com` for site-wide cookies [``]
 - `COOKIE_SECURE` - Cookie will only be set if a secure HTTPS connection exists [`true`, `false`]
-- `COOKIE_HTTP_OLNY` - Cookie will only be accessible via HTTP(S) (no JavaScript) [`true`, `false`]
+- `COOKIE_HTTP_ONLY` - Cookie will only be accessible via HTTP(S) (no JavaScript) [`true`, `false`]
 - `COOKIE_SAME_SITE` - Configure cookie SameSite setting [`None`, `Lax`, `Strict`, `''`]
 - `COOKIE_RAW` - This flag allows setting a "raw" cookie [`true`, `false`]
 
