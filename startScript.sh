@@ -489,7 +489,7 @@ codeigniter_env_generator() {
 			echo "cookie.secure = ${cookie_secure}" >> .env
 		fi
 
-		cookie_httponly=${COOKIE_HTTP_OLNY:-}
+		cookie_httponly=${COOKIE_HTTP_ONLY:-}
 		if [[ -z "${cookie_httponly}" ]]; then
 			echo "# cookie.httponly = false" >> .env
 		else
