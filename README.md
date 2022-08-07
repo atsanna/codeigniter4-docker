@@ -22,17 +22,17 @@ Clone thi repository and run:
 
 start the container with php 7.4:
 ```
-docker container run -it --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeigniter4.2.1:7.4.30-apache
+docker container run -it --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeigniter4.2.3:7.4.30-apache
 ```
 
 start the container with php 8.0:
 ```
-docker container run -it --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeigniter4.2.1:8.0.20-apache
+docker container run -it --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeigniter4.2.3:8.0.20-apache
 ```
 
 start the container with php 8.1:
 ```
-docker container run -it --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeigniter4.2.1:8.1.7-apache
+docker container run -it --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeigniter4.2.3:8.1.7-apache
 ```
 
 ## Installation

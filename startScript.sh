@@ -3,7 +3,7 @@ export PATH=/usr/local/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 app_name="codeigniter4"
-new_version="4.2.1"
+new_version="4.2.3"
 
 set -eu
 
