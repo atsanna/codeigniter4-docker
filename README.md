@@ -32,7 +32,7 @@ docker container run -it --publish 80:80 --name ci4 -v /localfolder:/var/www/htm
 
 start the container with php 8.1:
 ```
-docker container run -it --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeigniter4.2.3:8.1.7-apache
+docker container run -it --publish 80:80 --name ci4 -v /localfolder:/var/www/html codeigniter4.2.3:8.1.9-apache
 ```
 
 ## Installation
