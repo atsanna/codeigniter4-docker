@@ -63,7 +63,7 @@ docker-compose down --volumes
 
 ## App Configuration
 - `CI_ENVIRONMENT` - ENVIRONMENT [`production`, `develompent`, `tests`]
-- `APP_BASE_URL` - URL to your CodeIgniter root. Typically this will be your base URL, WITH a trailing slash [`http://localhots/`]
+- `APP_BASE_URL` - URL to your CodeIgniter root. Typically this will be your base URL, WITH a trailing slash [`http://localhost/`]
 - `APP_FORCE_GLOBAl_SECURE_REQUESTS` - If true, this will force every request made to this application to be made via a secure connection (HTTPS) [`true`, `false`]
 
 
