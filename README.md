@@ -349,3 +349,8 @@ Leave an issue on Github, or create a Pull Request.
 ## Licence
 
 This work is under [MIT](LICENSE) licence.
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
